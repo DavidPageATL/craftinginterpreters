@@ -64,7 +64,7 @@ public class GenerateAst {
             writer.println("    R visit" + typeName + basename + "(" + typeName + " " + basename.toLowerCase() + ");");
         }
 
-        writer.println(" }");
+        writer.println("  }");
     }
 
     private static void defineType(PrintWriter writer, String baseName, String className, String fieldList) {

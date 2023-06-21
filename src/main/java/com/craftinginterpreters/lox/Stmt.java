@@ -8,7 +8,7 @@ abstract class Stmt {
     R visitExpressionStmt(Expression stmt);
     R visitPrintStmt(Print stmt);
     R visitVarStmt(Var stmt);
- }
+  }
   static class Block extends Stmt {
     Block(List<Stmt> statements) {
       this.statements = statements;
