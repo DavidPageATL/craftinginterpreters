@@ -10,7 +10,7 @@ abstract class Expr {
     R visitLiteralExpr(Literal expr);
     R visitUnaryExpr(Unary expr);
     R visitVariableExpr(Variable expr);
- }
+  }
   static class Assign extends Expr {
     Assign(Token name, Expr value) {
       this.name = name;
