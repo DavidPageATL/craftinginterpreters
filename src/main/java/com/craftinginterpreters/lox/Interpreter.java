@@ -53,7 +53,7 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left > (double)right;
 
-            case GREATER_EQUAl:
+            case GREATER_EQUAL:
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left >= (double)right;
 
