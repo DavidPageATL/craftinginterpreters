@@ -49,27 +49,27 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
         Object right = evaluate(expr.right);
 
         switch (expr.operator.type) {
-            case GREATER -> {
+            case GREATER:
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left > (double)right;
-            }
-            case GREATER_EQUAl -> {
+
+            case GREATER_EQUAl:
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left >= (double)right;
-            }
-            case LESS -> {
+
+            case LESS:
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left < (double)right;
-            }
-            case LESS_EQUAL -> {
+
+            case LESS_EQUAL:
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left <= (double)right;
-            }
-            case MINUS -> {
+
+            case MINUS:
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left - (double)right;
-            }
-            case PLUS -> {
+
+            case PLUS:
                 if (left instanceof Double && right instanceof Double) {
                     return (double)left + (double)right;
                 }
@@ -79,17 +79,17 @@ public class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
                 }
 
                 throw new RuntimeError(expr.operator, "Operands must be two numbers or two strings.");
-            }
-            case SLASH -> {
+
+            case SLASH:
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left / (double)right;
-            }
-            case STAR -> {
+
+            case STAR:
                 checkNumberOperands(expr.operator, left, right);
                 return (double)left * (double)right;
-            }
-            case BANG_EQUAL -> { return !isEqual(left, right); }
-            case EQUAL_EQUAL -> { return isEqual(left, right); }
+
+            case BANG_EQUAL: return !isEqual(left, right);
+            case EQUAL_EQUAL: return isEqual(left, right);
         }
         // Unreachable.
         return null;
